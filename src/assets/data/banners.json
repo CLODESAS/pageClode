@@ -1,0 +1,8 @@
+[
+    { "title": "Línea de productos", "subtitle": "Electrónicos", "image": "assets/images/banners/BannerCat1.png" },
+    { "title": "Línea de productos", "subtitle": "Láser", "image":"assets/images/banners/BannerCat2.png"},
+    { "title": "Línea de productos", "subtitle": "Industrial", "image": "assets/images/banners/BannerCat3.png" },
+    { "title": "Línea de productos", "subtitle": "Impresión de rígidos", "image":"assets/images/banners/BannerCat4.png" },
+    { "title": "Línea de productos", "subtitle": "Diseño y modelado 3D", "image":"assets/images/banners/BannerCat5.png" },    
+    { "title": "Línea de productos", "subtitle": "Software", "image": "assets/images/banners/BannerCat6.png" }
+]

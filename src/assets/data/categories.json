@@ -1,0 +1,6 @@
+[   { "id": 92, "name": "Software", "hasSubCategory": false, "parentId": 0 },
+    { "id": 93, "name": "Marcación Industrial", "hasSubCategory": false, "parentId": 0 },
+    { "id": 100, "name": "Electrónica", "hasSubCategory": false, "parentId": 0 },
+    { "id": 150, "name": "Láser", "hasSubCategory": false, "parentId": 0 },    
+    { "id": 200, "name": "UV/Rígidos", "hasSubCategory": false, "parentId": 0 }
+]
