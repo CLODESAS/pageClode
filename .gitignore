@@ -1,17 +1,42 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+## Reglas estándar para Angular + SSR + Node
+# Más info: https://docs.github.com/get-started/getting-started-with-git/ignoring-files
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# Salidas de compilación/build
+dist/
+tmp/
+out-tsc/
+bazel-out/
+.angular/cache/
 
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
+# SSR y servidor
+.angular/
+server/
+*.server.mjs
+*.server.js
 
-# IDEs and editors
+# Dependencias Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Logs generales
+*.log
+logs/
+
+# Tests y cobertura
+coverage/
+.nyc_output/
+
+# Herramientas/CLI
+.sass-cache/
+connect.lock
+typings/
+
+# IDEs/Editores
 .idea/
 .project
 .classpath
@@ -26,17 +51,13 @@ yarn-error.log
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
+.history/
 
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+# Archivos de entorno y secretos
+.env
+.env.*
+!.env.example
 
-# System files
+# SO/archivos del sistema
 .DS_Store
 Thumbs.db
