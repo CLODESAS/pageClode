@@ -1,5 +1,22 @@
-$grey-primary: mat-palette($mat-blue-grey, 700, 50, 900);
-$grey-accent: mat-palette($mat-grey, 300, 100, 700);
-$grey-warn: mat-palette($mat-red, 500, A200, 800);
+@use '@angular/material' as mat;
 
-$grey-theme: mat-light-theme($grey-primary, $grey-accent, $grey-warn);
+$grey-primary: mat.m2-define-palette(mat.$m2-blue-grey-palette, 700, 50, 900);
+$grey-accent: mat.m2-define-palette(mat.$m2-grey-palette, 300, 100, 700);
+$grey-warn: mat.m2-define-palette(mat.$m2-red-palette, 500, A200, 800);
+
+// Mapa para consumo modular
+$skin: (
+	primary: $grey-primary,
+	accent: $grey-accent,
+	warn: $grey-warn,
+);
+
+// Alias sin guiones para consumo namespaced
+$primary: $grey-primary;
+$accent: $grey-accent;
+$warn: $grey-warn;
+
+// Funciones para consumo modular
+@function primary() { @return $grey-primary; }
+@function accent()  { @return $grey-accent; }
+@function warn()    { @return $grey-warn; }

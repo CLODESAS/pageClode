@@ -1,5 +1,22 @@
-$red-primary: mat-palette($mat-red, 700, 50, 900);
-$red-accent: mat-palette($mat-grey, 300, 100, 700);
-$red-warn: mat-palette($mat-deep-orange, A400);
+@use '@angular/material' as mat;
 
-$red-theme: mat-light-theme($red-primary, $red-accent, $red-warn);
+$red-primary: mat.m2-define-palette(mat.$m2-red-palette, 700, 50, 900);
+$red-accent: mat.m2-define-palette(mat.$m2-grey-palette, 300, 100, 700);
+$red-warn: mat.m2-define-palette(mat.$m2-deep-orange-palette, A400);
+
+// Mapa para consumo modular
+$skin: (
+	primary: $red-primary,
+	accent: $red-accent,
+	warn: $red-warn,
+);
+
+// Alias sin guiones para consumo namespaced
+$primary: $red-primary;
+$accent: $red-accent;
+$warn: $red-warn;
+
+// Funciones para consumo modular
+@function primary() { @return $red-primary; }
+@function accent()  { @return $red-accent; }
+@function warn()    { @return $red-warn; }

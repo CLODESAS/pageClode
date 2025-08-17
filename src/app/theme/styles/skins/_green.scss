@@ -1,5 +1,22 @@
-$green-primary: mat-palette($mat-light-green, 700, 50, 900);
-$green-accent: mat-palette($mat-grey, 300, 100, 700);
-$green-warn: mat-palette($mat-red, 500, A200, 800);
+@use '@angular/material' as mat;
 
-$green-theme: mat-light-theme($green-primary, $green-accent, $green-warn);
+$green-primary: mat.m2-define-palette(mat.$m2-light-green-palette, 700, 50, 900);
+$green-accent: mat.m2-define-palette(mat.$m2-grey-palette, 300, 100, 700);
+$green-warn: mat.m2-define-palette(mat.$m2-red-palette, 500, A200, 800);
+
+// Mapa para consumo modular
+$skin: (
+	primary: $green-primary,
+	accent: $green-accent,
+	warn: $green-warn,
+);
+
+// Alias sin guiones para consumo namespaced
+$primary: $green-primary;
+$accent: $green-accent;
+$warn: $green-warn;
+
+// Funciones para consumo modular
+@function primary() { @return $green-primary; }
+@function accent()  { @return $green-accent; }
+@function warn()    { @return $green-warn; }

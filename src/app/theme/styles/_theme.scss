@@ -1,36 +1,21 @@
-@import '~@angular/material/theming';
-@include mat-core();
+@use '@angular/material' as mat;
+@use 'theme-reset' as *;
+// Cargamos skins como módulos Sass para evitar @import deprecado
+@use 'skins/green' as *;
+@use 'skins/blue' as *;
+@use 'skins/red' as *;
+@use 'skins/pink' as *;
+@use 'skins/purple' as *;
+@use 'skins/grey' as *;
 
-@import 'theme-reset';
+// Nota: usaremos el tema preconstruido (indigo-pink) para Material
+// y aplicaremos solo overrides de skin vía mixin theme-reset.
+
 .app{
-    &.green{
-        @import "skins/green";
-        @include angular-material-theme($green-theme);
-        @include theme-reset($green-theme);
-    }
-    &.blue{
-        @import "skins/blue";
-        @include angular-material-theme($blue-theme);
-        @include theme-reset($blue-theme);
-    }
-    &.red{
-        @import "skins/red";
-        @include angular-material-theme($red-theme);
-        @include theme-reset($red-theme);
-    }
-    &.pink{
-        @import "skins/pink";
-        @include angular-material-theme($pink-theme);
-        @include theme-reset($pink-theme);
-    }
-    &.purple{
-        @import "skins/purple";
-        @include angular-material-theme($purple-theme);
-        @include theme-reset($purple-theme);
-    }
-    &.grey{
-        @import "skins/grey";
-        @include angular-material-theme($grey-theme);
-        @include theme-reset($grey-theme);
-    }
+    &.green { @include theme-reset($green-primary,  $green-accent,  $green-warn); }
+    &.blue  { @include theme-reset($blue-primary,   $blue-accent,   $blue-warn); }
+    &.red   { @include theme-reset($red-primary,    $red-accent,    $red-warn); }
+    &.pink  { @include theme-reset($pink-primary,   $pink-accent,   $pink-warn); }
+    &.purple{ @include theme-reset($purple-primary, $purple-accent, $purple-warn); }
+    &.grey  { @include theme-reset($grey-primary,   $grey-accent,   $grey-warn); }
 }

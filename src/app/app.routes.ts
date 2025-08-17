@@ -1,10 +1,16 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { E404Component } from './e404/e404.component';
+import { HomeComponent } from './features/home/home.component';
+import { CartPage } from './features/cart/cart.page';
+import { NotFoundPage } from './features/not-found/not-found.page';
 
-export const routes: Routes = [ 
-    { path: 'login', component: LoginComponent },
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
-    { path: 'e404', component: E404Component },
-    { path: '**', redirectTo: '/e404', pathMatch: 'full'}
+export const routes: Routes = [
+	{ path: '', component: HomeComponent },
+	{ path: 'products', loadComponent: () => import('./features/products-list/products-list.component').then(m => m.ProductsListComponent) },
+	{ path: 'products/:id', loadComponent: () => import('./features/product-detail/product-detail.component').then(m => m.ProductDetailComponent) },
+		{ path: 'cart', component: CartPage },
+		{ path: 'brands', loadComponent: () => import('./features/brands/brands.page').then(m => m.BrandsPage) },
+		{ path: 'brands/:name', loadComponent: () => import('./features/brands/brand-detail.page').then(m => m.BrandDetailPage) },
+		{ path: 'wishlist', loadComponent: () => import('./features/wishlist/wishlist.page').then(m => m.WishlistPage) },
+		{ path: 'compare', loadComponent: () => import('./features/compare/compare.page').then(m => m.ComparePage) },
+		{ path: '**', component: NotFoundPage },
 ];

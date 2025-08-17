@@ -1,0 +1,21 @@
+/* Base app layout tweaks */
+.main.app {
+  display: block;
+}
+
+.theme-container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+  /* En dark, el contenedor no debe forzar fondo claro */
+  background: transparent;
+  color: inherit;
+}
+
+/* Utility chips used in theme demo (kept lightweight if referenced elsewhere) */
+.chip {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 14px;
+  font-size: 12px;
+}

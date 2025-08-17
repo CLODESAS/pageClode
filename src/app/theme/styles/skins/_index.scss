@@ -1,0 +1,6 @@
+@forward 'green' as g-* show $primary, $accent, $warn;
+@forward 'blue'  as b-* show $primary, $accent, $warn;
+@forward 'red'   as r-* show $primary, $accent, $warn;
+@forward 'pink'  as p-* show $primary, $accent, $warn;
+@forward 'purple' as pr-* show $primary, $accent, $warn;
+@forward 'grey'  as gy-* show $primary, $accent, $warn;

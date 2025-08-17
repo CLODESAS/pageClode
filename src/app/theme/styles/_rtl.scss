@@ -1,4 +1,4 @@
-@import "mixins";
+@use "core" as *;
 
 .app[dir="rtl"]{    
     .mat-icon.caret{

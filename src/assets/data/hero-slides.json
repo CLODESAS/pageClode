@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Equipos y Soluciones",
+    "subtitle": "Para tu negocio",
+    "image": "assets/images/banners/BannerCat1.png",
+    "url": "/products",
+    "ctaText": "Explorar"
+  },
+  {
+    "title": "Línea Industrial",
+    "subtitle": "Rendimiento y calidad",
+    "image": "assets/images/banners/BannerCat3.png",
+    "url": "/products",
+    "ctaText": "Ver productos"
+  },
+  {
+    "title": "Software & 3D",
+    "subtitle": "Diseño y productividad",
+    "image": "assets/images/banners/BannerCat6.png",
+    "url": "/products",
+    "ctaText": "Cotizar"
+  }
+]

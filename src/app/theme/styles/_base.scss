@@ -1,4 +1,4 @@
-@import "variables";
+@use "core" as *;
 
 /******* Base styles *******/
 html{
@@ -45,8 +45,10 @@ a{
     width: 100%;
 }
 .light-block.mat-card{
-    background: rgba(0,0,0,0.03) !important;
-    box-shadow: none !important;    
+    background: var(--neutral-background) !important;
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: none !important;
+    color: inherit;
 }
 .transition{
     -webkit-transition: 0.3s;
@@ -465,9 +467,9 @@ button.swipe-arrow{
     }
     .title{
         display: block;
-        color: inherit;
+        color: var(--brand-primary);
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 18px;
     }
     .prices{
@@ -561,10 +563,9 @@ button.swipe-arrow{
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199px) {  }
-
+/* reserved breakpoint: add overrides if needed */
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {  }
+/* reserved breakpoint: add overrides if needed */
 
 
 ::-webkit-scrollbar {

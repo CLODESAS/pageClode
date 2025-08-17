@@ -1,4 +1,4 @@
-$font-family: Roboto, sans-serif;
+$font-family: var(--font-body, 'Mulish', Roboto, sans-serif);
 $theme-max-width: 1300px;
 
 $admin-toolbar-height: 56px;

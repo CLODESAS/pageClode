@@ -1,9 +1,28 @@
-@mixin theme-reset($theme) {
-    $primary: map-get($theme, primary);
-    $accent: map-get($theme, accent);
-    $warn: map-get($theme, warn);
-    $background: map-get($theme, background);
-    $foreground: map-get($theme, foreground);
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+// Helper para colores M2 (simula mat-color legacy)
+@function mat-color($palette, $hue: default, $opacity: null) {
+    $color: mat.m2-get-color-from-palette($palette, $hue);
+    @if $opacity != null {
+        @return rgba($color, $opacity);
+    }
+    @return $color;
+}
+
+// Helper básico para fondos tipo toolbar
+@mixin _mat-toolbar-color($palette) {
+    background-color: mat-color($palette);
+    color: #fff;
+}
+
+// Colores neutrales por defecto (equivalentes a foreground/background)
+$neutral-text: rgba(255, 255, 255, 0.92);
+$neutral-text-secondary: rgba(255, 255, 255, 0.65);
+$neutral-divider: rgba(255, 255, 255, 0.12);
+$neutral-background: var(--neutral-background, #111);
+
+@mixin theme-reset($primary, $accent, $warn) {
 
     .bg-primary {
         @include _mat-toolbar-color($primary);
@@ -15,9 +34,8 @@
         @include _mat-toolbar-color($warn);
     }
 
-    .text-muted {
-        color: mat-color($foreground, secondary-text) !important;
-    }
+    .text-muted { color: $neutral-text-secondary !important; }
+    .text-secondary { color: $neutral-text-secondary !important; }
 
     .secondary-color{
         color: mat-color($primary, 100);
@@ -44,8 +62,7 @@
     }
 
     .top-navbar{
-       // background: mat-color($primary, lighter);
-       background: mat-color($background, background);
+       background: $neutral-background;
     }
 
     .border-bottom-mute{
@@ -66,7 +83,7 @@
     }
 
     .new-price{
-        color: mat-color($warn);
+    color: mat-color($warn);
     }
     .primary-text{
         color: mat-color($primary);
@@ -95,7 +112,7 @@
         }
         a:hover, button:hover{
             background: rgba(mat-color($primary), 0.2);
-            color: mat-color($foreground, base);
+            color: $neutral-text;
         }
     }
 
@@ -106,15 +123,11 @@
             color: mat-color($primary);
         }
         .breadcrumb-item+.breadcrumb-item:before{
-            color: mat-color($foreground, text);
+            color: $neutral-text;
         }
     } 
-    .user-block{
-        border-bottom: 1px solid mat-color($foreground, divider);
-    }
+    .user-block{ border-bottom: 1px solid $neutral-divider; }
 
-    .menu-item .mat-button:not(.active-link) .menu-icon{
-        color: mat-color($primary);
-    }
+    .menu-item .mat-button:not(.active-link) .menu-icon{ color: mat-color($primary); }
 
 }
