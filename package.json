@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:emporium-ng20": "node dist/emporium-ng20/server/server.mjs"
+    "serve:ssr:emporium-ng20": "node dist/emporium-ng20/server/server.mjs",
+    "build:ssr": "ng build --configuration=server"
   },
   "prettier": {
     "printWidth": 100,
