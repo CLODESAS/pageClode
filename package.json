@@ -35,6 +35,7 @@
     "@angular/platform-server": "^20.1.0",
     "@angular/router": "^20.1.0",
     "@angular/ssr": "^20.1.6",
+    "@netlify/angular-runtime": "^3.0.1",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "swiper": "^11.2.10",
