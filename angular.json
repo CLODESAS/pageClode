@@ -58,7 +58,7 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
-            }
+            },
             "server": {
               "outputHashing": "all",
               "browser": "src/main.ts",
